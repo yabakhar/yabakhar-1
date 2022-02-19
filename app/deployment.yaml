@@ -16,4 +16,4 @@ spec:
         - name: argocd-wilapp
           image: wil42/playground:v1
           ports:
-        - containerPort: 8888
+          - containerPort: 8888
