@@ -4,16 +4,16 @@ metadata:
   name: argocd-wilapp
 spec:
   replicas: 1
-    selector:
-      matchLabels:
-        app: argocd-ilapp
-    template:
-      metadata:
-        labels:
-          app: argocd-wilapp
-      spec:
-        containers:
-          - name: argocd-wilapp
-            image: wil42/playground:v1
-            ports:
-          - containerPort: 8888
+  selector:
+    matchLabels:
+      app: argocd-ilapp
+  template:
+    metadata:
+      labels:
+        app: argocd-wilapp
+    spec:
+      containers:
+        - name: argocd-wilapp
+          image: wil42/playground:v1
+          ports:
+        - containerPort: 8888
