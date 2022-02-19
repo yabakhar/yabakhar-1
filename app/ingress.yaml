@@ -5,13 +5,12 @@ metadata:
   namespace: dev
 spec:
   rules:
-    - host:
-      http:
-        paths:
-        - pathType: Prefix
-          path: /
-          backend:
-            service:
-              name: argocd-app
-              port:
-                number: 80
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: argocd-app
+            port:
+              number: 8888
