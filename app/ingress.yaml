@@ -1,11 +1,17 @@
-apiVersion: v1
-kind: Service
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-    name: appwil
+  name: argocd-app-http-ingress
+  namespace: dev
 spec:
-    ports:
-    - name: http
-      port: 8888
-      targetPort: 8888
-    selector:
-        app: appwil
+  rules:
+  - host: app
+    http:
+      paths:
+      - pathType: Prefix
+        path: /
+        backend:
+          service:
+            name: argocd-app
+            port:
+              number: 80
